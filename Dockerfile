@@ -2,7 +2,7 @@
 # Packages: openai-codex-bin, gemini-cli, claude-code, opencode
 # Platform: linux/amd64, linux/arm64
 
-FROM archlinux:latest AS builder
+FROM lopsided/archlinux:latest AS builder
 
 # Install base packages needed for AUR building
 RUN pacman -Syu --noconfirm && \
@@ -33,9 +33,9 @@ RUN git clone https://aur.archlinux.org/yay.git && \
 # Using yay with --noconfirm and --needed flags
 RUN yay -S --noconfirm --needed \
     openai-codex-bin \
-    gemini-cli \
+    gemini-cli-git \
     claude-code \
-    opencode
+    opencode-bin
 
 # Clean yay cache to reduce image size
 RUN yay -Scc --noconfirm
@@ -44,7 +44,7 @@ RUN yay -Scc --noconfirm
 USER root
 
 # Final stage - create optimized runtime image
-FROM archlinux:latest
+FROM lopsided/archlinux:latest
 
 # Install minimal runtime dependencies
 RUN pacman -Syu --noconfirm && \

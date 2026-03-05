@@ -5,9 +5,9 @@ Automated daily builds of an Arch Linux Docker image with popular AI coding assi
 ## Included Tools
 
 - **openai-codex-bin** - OpenAI Codex CLI
-- **gemini-cli** - Google Gemini CLI
+- **gemini-cli-git** - Google Gemini CLI (built from source)
 - **claude-code** - Anthropic Claude Code CLI
-- **opencode** - OpenCode AI assistant
+- **opencode-bin** - OpenCode AI assistant
 
 ## Usage
 
@@ -73,7 +73,9 @@ This image is automatically built and pushed to GitHub Container Registry:
 ## Architecture Support
 
 - `linux/amd64` (x86_64)
-- `linux/arm64` (ARM 64-bit, including Apple Silicon)
+- `linux/arm64` (ARM 64-bit)
+  - **Compatible with Apple Silicon** (M1, M2, M3, M4 Macs)
+  - Native ARM64 performance (not emulated)
 
 ## Image Size Optimization
 
