@@ -4,9 +4,17 @@
 
 FROM lopsided/archlinux:latest AS builder
 
+# Fix mirrorlist to use reliable mirrors and update system
+RUN echo 'Server = https://geo.mirror.pkgbuild.com/$repo/os/$arch' > /etc/pacman.d/mirrorlist && \
+    echo 'Server = https://mirror.rackspace.com/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist && \
+    echo 'Server = https://mirrors.kernel.org/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist && \
+    pacman-key --init && \
+    pacman-key --populate archlinux && \
+    pacman -Sy --noconfirm archlinux-keyring && \
+    pacman -Su --noconfirm
+
 # Install base packages needed for AUR building
-RUN pacman -Syu --noconfirm && \
-    pacman -S --noconfirm \
+RUN pacman -S --noconfirm \
     base-devel \
     git \
     sudo \
@@ -46,9 +54,17 @@ USER root
 # Final stage - create optimized runtime image
 FROM lopsided/archlinux:latest
 
+# Fix mirrorlist to use reliable mirrors and update system
+RUN echo 'Server = https://geo.mirror.pkgbuild.com/$repo/os/$arch' > /etc/pacman.d/mirrorlist && \
+    echo 'Server = https://mirror.rackspace.com/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist && \
+    echo 'Server = https://mirrors.kernel.org/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist && \
+    pacman-key --init && \
+    pacman-key --populate archlinux && \
+    pacman -Sy --noconfirm archlinux-keyring && \
+    pacman -Su --noconfirm
+
 # Install minimal runtime dependencies
-RUN pacman -Syu --noconfirm && \
-    pacman -S --noconfirm \
+RUN pacman -S --noconfirm \
     sudo \
     git \
     base-devel \
