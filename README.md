@@ -1,0 +1,84 @@
+# AI Bot Auto-Build Docker Image
+
+Automated daily builds of an Arch Linux Docker image with popular AI coding assistants pre-installed.
+
+## Included Tools
+
+- **openai-codex-bin** - OpenAI Codex CLI
+- **gemini-cli** - Google Gemini CLI
+- **claude-code** - Anthropic Claude Code CLI
+- **opencode** - OpenCode AI assistant
+
+## Usage
+
+### Pull from GitHub Container Registry
+
+```bash
+docker pull ghcr.io/chmouel/agent-image:latest
+```
+
+### Run the container
+
+```bash
+docker run -it ghcr.io/chmouel/agent-image:latest
+```
+
+### Run a specific tool
+
+```bash
+# Run Codex
+docker run -it ghcr.io/chmouel/agent-image:latest codex --help
+
+# Run Gemini
+docker run -it ghcr.io/chmouel/agent-image:latest gemini --help
+
+# Run Claude
+docker run -it ghcr.io/chmouel/agent-image:latest claude --help
+
+# Run OpenCode
+docker run -it ghcr.io/chmouel/agent-image:latest opencode --help
+```
+
+### Install additional AUR packages
+
+The image includes `yay` AUR helper, so you can install additional packages:
+
+```bash
+docker run -it ghcr.io/chmouel/agent-image:latest bash
+# Inside container:
+yay -S <package-name>
+```
+
+## Build Locally
+
+```bash
+docker build -t agent-image .
+```
+
+For multi-architecture builds:
+
+```bash
+docker buildx build --platform linux/amd64,linux/arm64 -t agent-image .
+```
+
+## Automated Builds
+
+This image is automatically built and pushed to GitHub Container Registry:
+
+- **Daily**: Every day at 2 AM UTC
+- **On push**: When changes are pushed to the main branch
+- **On PR**: For testing (not pushed to registry)
+- **Manual**: Via GitHub Actions workflow dispatch
+
+## Architecture Support
+
+- `linux/amd64` (x86_64)
+- `linux/arm64` (ARM 64-bit, including Apple Silicon)
+
+## Image Size Optimization
+
+The Dockerfile uses multi-stage builds to minimize the final image size while keeping essential tools like `yay` for package management.
+
+## License
+
+MIT
