@@ -20,7 +20,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/agent-image
+  IMAGE_NAME: ${{ github.repository_owner }}/agents-image
 
 jobs:
   build-and-push:

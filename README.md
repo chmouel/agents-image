@@ -14,29 +14,29 @@ Automated daily builds of an Arch Linux Docker image with popular AI coding assi
 ### Pull from GitHub Container Registry
 
 ```bash
-docker pull ghcr.io/chmouel/agent-image:latest
+docker pull ghcr.io/chmouel/agents-image:latest
 ```
 
 ### Run the container
 
 ```bash
-docker run -it ghcr.io/chmouel/agent-image:latest
+docker run -it ghcr.io/chmouel/agents-image:latest
 ```
 
 ### Run a specific tool
 
 ```bash
 # Run Codex
-docker run -it ghcr.io/chmouel/agent-image:latest codex --help
+docker run -it ghcr.io/chmouel/agents-image:latest codex --help
 
 # Run Gemini
-docker run -it ghcr.io/chmouel/agent-image:latest gemini --help
+docker run -it ghcr.io/chmouel/agents-image:latest gemini --help
 
 # Run Claude
-docker run -it ghcr.io/chmouel/agent-image:latest claude --help
+docker run -it ghcr.io/chmouel/agents-image:latest claude --help
 
 # Run OpenCode
-docker run -it ghcr.io/chmouel/agent-image:latest opencode --help
+docker run -it ghcr.io/chmouel/agents-image:latest opencode --help
 ```
 
 ### Install additional AUR packages
@@ -44,7 +44,7 @@ docker run -it ghcr.io/chmouel/agent-image:latest opencode --help
 The image includes `yay` AUR helper, so you can install additional packages:
 
 ```bash
-docker run -it ghcr.io/chmouel/agent-image:latest bash
+docker run -it ghcr.io/chmouel/agents-image:latest bash
 # Inside container:
 yay -S <package-name>
 ```
@@ -52,13 +52,13 @@ yay -S <package-name>
 ## Build Locally
 
 ```bash
-docker build -t agent-image .
+docker build -t agents-image .
 ```
 
 For multi-architecture builds:
 
 ```bash
-docker buildx build --platform linux/amd64,linux/arm64 -t agent-image .
+docker buildx build --platform linux/amd64,linux/arm64 -t agents-image .
 ```
 
 ## Automated Builds
