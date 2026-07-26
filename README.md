@@ -31,7 +31,7 @@ Automated daily builds of an Ubuntu-based Docker image with popular AI coding as
 | jq | jq-1.8.1 |
 | shellcheck | 0.11.0 |
 
-_Last updated: 2026-07-25T05:29:29Z_
+_Last updated: 2026-07-26T05:47:58Z_
 <!-- versions-end -->
 
 ## Usage
