@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-29T05:39:49Z",
+  "updated": "2026-07-30T05:26:25Z",
   "node": "20.19.1",
   "codex": "codex-cli 0.146.0",
   "claude": "2.1.220 (Claude Code)",
   "gemini": "0.53.0",
   "opencode": "1.18.9",
-  "copilot": "GitHub Copilot CLI 1.0.75.",
+  "copilot": "GitHub Copilot CLI 1.0.76.",
   "sg": "========================================================================",
   "yq": "yq (https://github.com/mikefarah/yq/) version v4.53.3",
   "gh": "gh version 2.96.0 (2026-07-02)",
