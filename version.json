@@ -1,8 +1,8 @@
 {
-  "updated": "2026-08-06T05:33:32Z",
+  "updated": "2026-08-07T04:39:06Z",
   "node": "20.19.1",
-  "codex": "codex-cli 0.146.1",
-  "claude": "2.1.223 (Claude Code)",
+  "codex": "codex-cli 0.147.0",
+  "claude": "2.1.224 (Claude Code)",
   "gemini": "0.54.0",
   "opencode": "1.18.14",
   "copilot": "GitHub Copilot CLI 1.0.78.",

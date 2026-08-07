@@ -15,8 +15,8 @@ Automated daily builds of an Ubuntu-based Docker image with popular AI coding as
 | Tool | Version |
 |------|---------|
 | node | 20.19.1 |
-| codex | codex-cli 0.146.1 |
-| claude | 2.1.223 (Claude Code) |
+| codex | codex-cli 0.147.0 |
+| claude | 2.1.224 (Claude Code) |
 | gemini | 0.54.0 |
 | opencode | 1.18.14 |
 | copilot | GitHub Copilot CLI 1.0.78. |
@@ -31,7 +31,7 @@ Automated daily builds of an Ubuntu-based Docker image with popular AI coding as
 | jq | jq-1.8.1 |
 | shellcheck | 0.11.0 |
 
-_Last updated: 2026-08-06T05:33:32Z_
+_Last updated: 2026-08-07T04:39:06Z_
 <!-- versions-end -->
 
 ## Usage
